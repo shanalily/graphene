@@ -438,6 +438,11 @@ graphene:hasDownload dc:identifer "download";
 rdfs:Resource graphene:hasView "resource_view.html";
   graphene:hasDownload "download_view.html".
 
+# added this
+dc:BibliographicResource graphene:hasView "article_view.html";
+  graphene:hasDownload "download_view.html".
+#
+
 owl:Class rdfs:label "Class";
     graphene:hasView "class_view.html".
 

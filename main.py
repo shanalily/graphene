@@ -80,6 +80,14 @@ class SearchForm(Form):
 def to_json(result):
     return json.dumps([dict([(key, value.value if isinstance(value, Literal) else value) for key, value in x.items()]) for x in result.bindings])
 
+# from EagleW/graphene fork
+def getfullname(name):
+    for key in config.namespaces.keys():
+        if key in name:
+            i = name.find(key)
+            new_url = name[i:]
+            # print new_url.replace(key, config.namespaces[key]["source"])
+            return new_url.replace(key, config.namespaces[key]["source"])
         
 class App(Empty): 
 
@@ -235,6 +243,8 @@ class App(Empty):
         @self.route('/<name>.<format>')
         @self.route('/<name>')
         @self.route('/')
+        # @self.route('/doi/10.7717/peerj-cs.106') # I need to figure out how to make
+        # this an option to choose
         @login_required
         def view(name=None, format=None, view=None):
             
