@@ -1,0 +1,70 @@
+@prefix ns1: <http://localhost:5000/pub/> .
+@prefix ns2: <http://purl.org/dc/terms/> .
+@prefix ns3: <http://open.vocab.org/terms/> .
+@prefix ns4: <http://rdfs.org/sioc/ns#> .
+@prefix ns5: <http://www.nanopub.org/nschema#> .
+@prefix ns6: <http://www.w3.org/ns/rdfa#> .
+@prefix ns7: <http://www.w3.org/ns/prov#> .
+@prefix ns8: <http://semanticscience.org/resource/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:NjYxMjEyLjU0NTg1Ng_pubinfo {
+    ns1:NjYxMjEyLjU0NTg1Ng_assertion ns2:contributor <http://localhost:5000/user/shoshana> ;
+        ns2:created "2017-04-26T02:06:17.317408"^^xsd:dateTime .
+}
+
+{
+    ns1:NjYxMjEyLjU0NTg1Ng a ns5:Nanopublication ;
+        ns8:isAbout <http://localhost:5000/doi> ;
+        ns5:hasAssertion ns1:NjYxMjEyLjU0NTg1Ng_assertion ;
+        ns5:hasProvenance ns1:NjYxMjEyLjU0NTg1Ng_provenance ;
+        ns5:hasPublicationInfo ns1:NjYxMjEyLjU0NTg1Ng_pubinfo .
+
+    ns1:NjYxMjEyLjU0NTg1Ng_assertion a ns5:Assertion ;
+        ns3:hasContentType "text/markdown" ;
+        ns2:contributor <http://localhost:5000/user/shoshana> ;
+        ns2:created "2017-04-26T02:06:17.317408"^^xsd:dateTime ;
+        ns4:content """<div base="http://localhost:5000/" prefix="foaf: http://xmlns.com/foaf/0.1/ owl: http://www.w3.org/2002/07/owl# skos: http://www.w3.org/2004/02/skos/core# dcelements: http://purl.org/dc/elements/1.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# prov: http://www.w3.org/ns/prov# graphene: http://vocab.rpi.edu/graphene/ dc: http://purl.org/dc/terms/ auth: http://vocab.rpi.edu/auth/ rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# sioc_types: http://rdfs.org/sioc/types# xsd: http://www.w3.org/2001/XMLSchema# cmo: http://purl.org/twc/ontologies/cmo.owl# np: http://www.nanopub.org/nschema# ov: http://open.vocab.org/terms/ sioc: http://rdfs.org/sioc/ns# sio: http://semanticscience.org/resource/ local: http://localhost:5000/" resource="http://localhost:5000/doi" vocab="http://localhost:5000/"><p>{
+    ns1:MzU4MTQzLjU4ODY2OQ a ns8:Nanopublication ;
+        ns4:isAbout<a href="http://localhost:5000/doi/10.7717/peerj-cs.106">http://localhost:5000/doi/10.7717/peerj-cs.106</a> ;
+        ns8:hasAssertion ns1:MzU4MTQzLjU4ODY2OQ_assertion ;
+        ns8:hasProvenance ns1:MzU4MTQzLjU4ODY2OQ_provenance ;
+        ns8:hasPublicationInfo ns1:MzU4MTQzLjU4ODY2OQ_pubinfo .</p>
+<pre><code>ns1:MzU4MTQzLjU4ODY2OQ_assertion a ns8:Assertion .
+
+ns1:MzU4MTQzLjU4ODY2OQ_provenance a ns8:Provenance ;
+    ns3:hasContentType &quot;text/markdown&quot; .
+
+ns1:MzU4MTQzLjU4ODY2OQ_pubinfo a ns8:PublicationInfo ;
+    ns3:hasContentType &quot;text/markdown&quot; .</code></pre>
+<p>}</p></div>"""^^rdf:HTML ;
+        ns7:value """{
+    ns1:MzU4MTQzLjU4ODY2OQ a ns8:Nanopublication ;
+        ns4:isAbout <http://localhost:5000/doi/10.7717/peerj-cs.106> ;
+        ns8:hasAssertion ns1:MzU4MTQzLjU4ODY2OQ_assertion ;
+        ns8:hasProvenance ns1:MzU4MTQzLjU4ODY2OQ_provenance ;
+        ns8:hasPublicationInfo ns1:MzU4MTQzLjU4ODY2OQ_pubinfo .
+
+    ns1:MzU4MTQzLjU4ODY2OQ_assertion a ns8:Assertion .
+
+    ns1:MzU4MTQzLjU4ODY2OQ_provenance a ns8:Provenance ;
+        ns3:hasContentType "text/markdown" .
+
+    ns1:MzU4MTQzLjU4ODY2OQ_pubinfo a ns8:PublicationInfo ;
+        ns3:hasContentType "text/markdown" .
+}""" .
+
+    ns1:NjYxMjEyLjU0NTg1Ng_provenance a ns5:Provenance ;
+        ns3:hasContentType "text/markdown" .
+
+    ns1:NjYxMjEyLjU0NTg1Ng_pubinfo a ns5:PublicationInfo ;
+        ns3:hasContentType "text/markdown" .
+}
+
+ns1:NjYxMjEyLjU0NTg1Ng_assertion {
+    <> ns6:usesVocabulary <http://localhost:5000/> .
+}
+

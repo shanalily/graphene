@@ -439,6 +439,8 @@ rdfs:Resource graphene:hasView "resource_view.html";
   graphene:hasDownload "download_view.html".
 
 # added this
+# why is article_view being used when the home page should not
+# be a bibliographic resource?
 dc:BibliographicResource graphene:hasView "article_view.html";
   graphene:hasDownload "download_view.html".
 #

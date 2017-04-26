@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
-
+import config
+import requests
 
 import os
 import sys, collections
@@ -237,16 +238,17 @@ class App(Empty):
             return resource.graph.preferredLabel(resource.identifier, default=[], labelProperties=summary_properties)
 
         self.get_summary = get_summary
-        
+
         @self.route('/about.<format>')
         @self.route('/about')
         @self.route('/<name>.<format>')
         @self.route('/<name>')
         @self.route('/')
+        @self.route('/<name>/<prefix>/<suffix>')
         # @self.route('/doi/10.7717/peerj-cs.106') # I need to figure out how to make
         # this an option to choose
         @login_required
-        def view(name=None, format=None, view=None):
+        def view(name=None, format=None, view=None, prefix=None, suffix=None):
             
             #print name
             if name is not None:
@@ -264,6 +266,13 @@ class App(Empty):
             
             htmls = set(['application/xhtml','text/html'])
             if sadi.mimeparse.best_match(htmls, content_type) in htmls:
+                #
+                url = getfullname(resource.identifier + "/" + str(prefix) + "/" + str(suffix))
+                if url is not None:
+                    headers = {'Accept': 'application/rdf+xml'}
+                    r = requests.get(url, headers=headers)
+                    print r.text
+                #
                 return render_view(resource)
             else:
                 fmt = dataFormats[sadi.mimeparse.best_match([mt for mt in dataFormats.keys() if mt is not None],content_type)]

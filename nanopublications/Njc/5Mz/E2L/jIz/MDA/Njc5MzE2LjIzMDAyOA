@@ -1,0 +1,46 @@
+@prefix ns1: <http://localhost:5000/pub/> .
+@prefix ns2: <http://open.vocab.org/terms/> .
+@prefix ns3: <http://purl.org/dc/terms/> .
+@prefix ns4: <http://semanticscience.org/resource/> .
+@prefix ns5: <http://rdfs.org/sioc/ns#> .
+@prefix ns6: <http://www.w3.org/ns/prov#> .
+@prefix ns7: <http://www.nanopub.org/nschema#> .
+@prefix ns8: <http://www.w3.org/ns/rdfa#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+{
+    ns1:Njc5MzE2LjIzMDAyOA a ns7:Nanopublication ;
+        ns4:isAbout <http://localhost:5000/rabbit> ;
+        ns7:hasAssertion ns1:Njc5MzE2LjIzMDAyOA_assertion ;
+        ns7:hasProvenance ns1:Njc5MzE2LjIzMDAyOA_provenance ;
+        ns7:hasPublicationInfo ns1:Njc5MzE2LjIzMDAyOA_pubinfo .
+
+    ns1:Njc5MzE2LjIzMDAyOA_assertion a ns7:Assertion ;
+        ns2:hasContentType "text/markdown" ;
+        ns3:contributor <http://localhost:5000/user/shoshana> ;
+        ns3:created "2017-04-23T00:22:00.080568"^^xsd:dateTime ;
+        ns5:content "<div base=\"http://localhost:5000/\" prefix=\"foaf: http://xmlns.com/foaf/0.1/ owl: http://www.w3.org/2002/07/owl# skos: http://www.w3.org/2004/02/skos/core# dcelements: http://purl.org/dc/elements/1.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# prov: http://www.w3.org/ns/prov# graphene: http://vocab.rpi.edu/graphene/ dc: http://purl.org/dc/terms/ auth: http://vocab.rpi.edu/auth/ rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# sioc_types: http://rdfs.org/sioc/types# xsd: http://www.w3.org/2001/XMLSchema# cmo: http://purl.org/twc/ontologies/cmo.owl# np: http://www.nanopub.org/nschema# ov: http://open.vocab.org/terms/ sioc: http://rdfs.org/sioc/ns# sio: http://semanticscience.org/resource/ local: http://localhost:5000/\" resource=\"http://localhost:5000/rabbit\" vocab=\"http://localhost:5000/\"><p><span property=\"rdfs:label\">Bunny</span> is part of the family <a href=\"http://localhost:5000/Leporidae\" property=\"dc:subject\">Leporidae</a>.</p></div>"^^rdf:HTML ;
+        ns6:value "(rdfs:label)[Bunny] is part of the family (dc:subject)[Leporidae](http://localhost:5000/Leporidae)." .
+
+    ns1:Njc5MzE2LjIzMDAyOA_provenance a ns7:Provenance ;
+        ns2:hasContentType "text/markdown" .
+
+    ns1:Njc5MzE2LjIzMDAyOA_pubinfo a ns7:PublicationInfo ;
+        ns2:hasContentType "text/markdown" .
+}
+
+ns1:Njc5MzE2LjIzMDAyOA_assertion {
+    <> ns8:usesVocabulary <http://localhost:5000/> .
+
+    <http://localhost:5000/rabbit> rdfs:label "Bunny" ;
+        ns3:subject <http://localhost:5000/Leporidae> .
+}
+
+ns1:Njc5MzE2LjIzMDAyOA_pubinfo {
+    ns1:Njc5MzE2LjIzMDAyOA_assertion ns3:contributor <http://localhost:5000/user/shoshana> ;
+        ns3:created "2017-04-23T00:22:00.080568"^^xsd:dateTime .
+}
+

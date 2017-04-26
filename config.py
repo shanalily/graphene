@@ -93,3 +93,67 @@ Test.update(dict(
     TESTING = True,
     WTF_CSRF_ENABLED = False
 ))
+
+# from EagleW/graphene
+namespaces = {
+    "doi/":
+    {
+        "type":"LOD",
+        "source":"http://dx.doi.org/"
+    },
+    "author/":
+    {
+        "type":"LOD",
+        "source":"http://nanomine.tw.rpi.edu/author/"
+    },
+    "bibo/":
+    {
+        "type":"LOD",
+        "source":"http://purl.org/ontology/bibo/"
+    },
+    "chear/":
+    {
+        "type":"LOD",
+        "source":"http://hadatac.org/ont/chear#"
+    },
+    "compound/":
+    {
+        "type":"LOD",
+        "source":"http://nanomine.tw.rpi.edu/compound/"
+    },
+    "dataset/":
+    {
+        "type":"LOD",
+        "source":"https://hbgd.tw.rpi.edu/dataset/"
+    },
+    "dcat/":
+    {
+        "type":"LOD",
+        "source":"http://www.w3.org/ns/dcat#"
+    },
+    "dcterms/":
+    {
+        "type":"LOD",
+        "source":"http://purl.org/dc/terms/"
+    },
+    "entry/":
+    {
+        "type":"LOD",
+        "source":"http://nanomine.tw.rpi.edu/entry/"
+    },
+    "foaf/":
+    {
+        "type":"LOD",
+        "source":"http://xmlns.com/foaf/0.1/"
+    },
+    "lang/":
+    {
+        "type":"LOD",
+        "source":"http://nanomine.tw.rpi.edu/language/"
+    },
+    "location/":
+    {
+        "type":"LOD",
+        "source":"http://nanomine.tw.rpi.edu/location/"
+    }
+}

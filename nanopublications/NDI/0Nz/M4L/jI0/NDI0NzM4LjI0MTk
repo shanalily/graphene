@@ -1,0 +1,46 @@
+@prefix ns1: <http://localhost:5000/pub/> .
+@prefix ns2: <http://www.w3.org/ns/rdfa#> .
+@prefix ns3: <http://purl.org/dc/terms/> .
+@prefix ns4: <http://www.nanopub.org/nschema#> .
+@prefix ns5: <http://open.vocab.org/terms/> .
+@prefix ns6: <http://rdfs.org/sioc/ns#> .
+@prefix ns7: <http://www.w3.org/ns/prov#> .
+@prefix ns8: <http://semanticscience.org/resource/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:NDI0NzM4LjI0MTk_assertion {
+    <> ns2:usesVocabulary <http://localhost:5000/> .
+
+    <http://localhost:5000/snake> a "reptile" ;
+        rdfs:label "Snake" .
+}
+
+ns1:NDI0NzM4LjI0MTk_pubinfo {
+    ns1:NDI0NzM4LjI0MTk_assertion ns3:contributor <http://localhost:5000/user/shoshana> ;
+        ns3:created "2017-04-23T00:18:56.998647"^^xsd:dateTime .
+}
+
+{
+    ns1:NDI0NzM4LjI0MTk a ns4:Nanopublication ;
+        ns8:isAbout <http://localhost:5000/snake> ;
+        ns4:hasAssertion ns1:NDI0NzM4LjI0MTk_assertion ;
+        ns4:hasProvenance ns1:NDI0NzM4LjI0MTk_provenance ;
+        ns4:hasPublicationInfo ns1:NDI0NzM4LjI0MTk_pubinfo .
+
+    ns1:NDI0NzM4LjI0MTk_assertion a ns4:Assertion ;
+        ns5:hasContentType "text/markdown" ;
+        ns3:contributor <http://localhost:5000/user/shoshana> ;
+        ns3:created "2017-04-23T00:18:56.998647"^^xsd:dateTime ;
+        ns6:content "<div base=\"http://localhost:5000/\" prefix=\"foaf: http://xmlns.com/foaf/0.1/ owl: http://www.w3.org/2002/07/owl# skos: http://www.w3.org/2004/02/skos/core# dcelements: http://purl.org/dc/elements/1.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# prov: http://www.w3.org/ns/prov# graphene: http://vocab.rpi.edu/graphene/ dc: http://purl.org/dc/terms/ auth: http://vocab.rpi.edu/auth/ rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# sioc_types: http://rdfs.org/sioc/types# xsd: http://www.w3.org/2001/XMLSchema# cmo: http://purl.org/twc/ontologies/cmo.owl# np: http://www.nanopub.org/nschema# ov: http://open.vocab.org/terms/ sioc: http://rdfs.org/sioc/ns# sio: http://semanticscience.org/resource/ local: http://localhost:5000/\" resource=\"http://localhost:5000/snake\" vocab=\"http://localhost:5000/\"><p><span property=\"rdfs:label\">Snake</span> is a <span property=\"rdf:type\">reptile</span>.</p></div>"^^rdf:HTML ;
+        ns7:value "(rdfs:label)[Snake] is a (rdf:type)[reptile]." .
+
+    ns1:NDI0NzM4LjI0MTk_provenance a ns4:Provenance ;
+        ns5:hasContentType "text/markdown" .
+
+    ns1:NDI0NzM4LjI0MTk_pubinfo a ns4:PublicationInfo ;
+        ns5:hasContentType "text/markdown" .
+}
+

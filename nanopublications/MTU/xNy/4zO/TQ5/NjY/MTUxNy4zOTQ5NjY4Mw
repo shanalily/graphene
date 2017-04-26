@@ -1,0 +1,43 @@
+@prefix ns1: <http://localhost:5000/pub/> .
+@prefix ns2: <http://semanticscience.org/resource/> .
+@prefix ns3: <http://open.vocab.org/terms/> .
+@prefix ns4: <http://www.nanopub.org/nschema#> .
+@prefix ns5: <http://rdfs.org/sioc/ns#> .
+@prefix ns6: <http://www.w3.org/ns/rdfa#> .
+@prefix ns7: <http://purl.org/dc/terms/> .
+@prefix ns8: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+{
+    ns1:MTUxNy4zOTQ5NjY4Mw a ns4:Nanopublication ;
+        ns2:isAbout <http://localhost:5000/animal> ;
+        ns4:hasAssertion ns1:MTUxNy4zOTQ5NjY4Mw_assertion ;
+        ns4:hasProvenance ns1:MTUxNy4zOTQ5NjY4Mw_provenance ;
+        ns4:hasPublicationInfo ns1:MTUxNy4zOTQ5NjY4Mw_pubinfo .
+
+    ns1:MTUxNy4zOTQ5NjY4Mw_assertion a ns4:Assertion ;
+        ns3:hasContentType "text/markdown" ;
+        ns7:contributor <http://localhost:5000/user/shoshana> ;
+        ns7:created "2017-04-23T00:23:34.641216"^^xsd:dateTime ;
+        ns5:content "<div base=\"http://localhost:5000/\" prefix=\"foaf: http://xmlns.com/foaf/0.1/ owl: http://www.w3.org/2002/07/owl# skos: http://www.w3.org/2004/02/skos/core# dcelements: http://purl.org/dc/elements/1.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# prov: http://www.w3.org/ns/prov# graphene: http://vocab.rpi.edu/graphene/ dc: http://purl.org/dc/terms/ auth: http://vocab.rpi.edu/auth/ rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# sioc_types: http://rdfs.org/sioc/types# xsd: http://www.w3.org/2001/XMLSchema# cmo: http://purl.org/twc/ontologies/cmo.owl# np: http://www.nanopub.org/nschema# ov: http://open.vocab.org/terms/ sioc: http://rdfs.org/sioc/ns# sio: http://semanticscience.org/resource/ local: http://localhost:5000/\" resource=\"http://localhost:5000/animal\" vocab=\"http://localhost:5000/\"><p><a href=\"dbo:Eukaryote\">rdfs:subClassOf</a></p></div>"^^rdf:HTML ;
+        ns8:value "[rdfs:subClassOf](dbo:Eukaryote)" .
+
+    ns1:MTUxNy4zOTQ5NjY4Mw_provenance a ns4:Provenance ;
+        ns3:hasContentType "text/markdown" .
+
+    ns1:MTUxNy4zOTQ5NjY4Mw_pubinfo a ns4:PublicationInfo ;
+        ns3:hasContentType "text/markdown" .
+}
+
+ns1:MTUxNy4zOTQ5NjY4Mw_assertion {
+    <> ns6:usesVocabulary <http://localhost:5000/> .
+}
+
+ns1:MTUxNy4zOTQ5NjY4Mw_pubinfo {
+    ns1:MTUxNy4zOTQ5NjY4Mw_assertion ns7:contributor <http://localhost:5000/user/shoshana> ;
+        ns7:created "2017-04-23T00:23:34.641216"^^xsd:dateTime .
+}
+

@@ -1,0 +1,45 @@
+@prefix ns1: <http://localhost:5000/pub/> .
+@prefix ns2: <http://open.vocab.org/terms/> .
+@prefix ns3: <http://www.nanopub.org/nschema#> .
+@prefix ns4: <http://purl.org/dc/terms/> .
+@prefix ns5: <http://www.w3.org/ns/rdfa#> .
+@prefix ns6: <http://www.w3.org/ns/prov#> .
+@prefix ns7: <http://semanticscience.org/resource/> .
+@prefix ns8: <http://rdfs.org/sioc/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+{
+    ns1:NjAyMjkwLjg4Njk0Ng a ns3:Nanopublication ;
+        ns7:isAbout <http://localhost:5000/maremma> ;
+        ns3:hasAssertion ns1:NjAyMjkwLjg4Njk0Ng_assertion ;
+        ns3:hasProvenance ns1:NjAyMjkwLjg4Njk0Ng_provenance ;
+        ns3:hasPublicationInfo ns1:NjAyMjkwLjg4Njk0Ng_pubinfo .
+
+    ns1:NjAyMjkwLjg4Njk0Ng_assertion a ns3:Assertion ;
+        ns2:hasContentType "text/markdown" ;
+        ns4:contributor <http://localhost:5000/user/shoshana> ;
+        ns4:created "2017-04-23T00:08:53.635335"^^xsd:dateTime ;
+        ns8:content "<div base=\"http://localhost:5000/\" prefix=\"foaf: http://xmlns.com/foaf/0.1/ owl: http://www.w3.org/2002/07/owl# skos: http://www.w3.org/2004/02/skos/core# dcelements: http://purl.org/dc/elements/1.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# prov: http://www.w3.org/ns/prov# graphene: http://vocab.rpi.edu/graphene/ dc: http://purl.org/dc/terms/ auth: http://vocab.rpi.edu/auth/ rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# sioc_types: http://rdfs.org/sioc/types# xsd: http://www.w3.org/2001/XMLSchema# cmo: http://purl.org/twc/ontologies/cmo.owl# np: http://www.nanopub.org/nschema# ov: http://open.vocab.org/terms/ sioc: http://rdfs.org/sioc/ns# sio: http://semanticscience.org/resource/ local: http://localhost:5000/\" resource=\"http://localhost:5000/maremma\" vocab=\"http://localhost:5000/\"><p>A Maremma is a<span property=\"rdf:type\">animal</span></p></div>"^^rdf:HTML ;
+        ns6:value "A Maremma is a (rdf:type)[animal]" .
+
+    ns1:NjAyMjkwLjg4Njk0Ng_provenance a ns3:Provenance ;
+        ns2:hasContentType "text/markdown" .
+
+    ns1:NjAyMjkwLjg4Njk0Ng_pubinfo a ns3:PublicationInfo ;
+        ns2:hasContentType "text/markdown" .
+}
+
+ns1:NjAyMjkwLjg4Njk0Ng_assertion {
+    <> ns5:usesVocabulary <http://localhost:5000/> .
+
+    <http://localhost:5000/maremma> a "animal" .
+}
+
+ns1:NjAyMjkwLjg4Njk0Ng_pubinfo {
+    ns1:NjAyMjkwLjg4Njk0Ng_assertion ns4:contributor <http://localhost:5000/user/shoshana> ;
+        ns4:created "2017-04-23T00:08:53.635335"^^xsd:dateTime .
+}
+
